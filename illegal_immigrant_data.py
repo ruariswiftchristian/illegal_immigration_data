@@ -45,7 +45,7 @@ def make_heatmap(input_df, input_y, input_x, input_color, input_color_theme):
         titleFontSize=12
         ) 
     # height=300
-    return heatmap
+return heatmap
 
 def calculate_totalencounters_difference(input_df, input_year):
   	selected_year_data = input_df[input_df['year'] == input_year].reset_index()
