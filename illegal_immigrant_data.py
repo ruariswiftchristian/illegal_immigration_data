@@ -47,14 +47,14 @@ def make_heatmap(input_df, input_y, input_x, input_color, input_color_theme):
     # height=300
     return heatmap
 
-  def calculate_totalencounters_difference(input_df, input_year):
+def calculate_totalencounters_difference(input_df, input_year):
   	selected_year_data = input_df[input_df['year'] == input_year].reset_index()
   	previous_year_data = input_df[input_df['year'] == input_year - 1].reset_index()
   	selected_year_data['totalencounters_difference'] = selected_year_data.totalencounters.sub(previous_year_data.totalencounters, fill_value=0)
   	eturn pd.concat([selected_year_data.month, selected_year_data.totalencounters, selected_year_data.totalencounters_difference], axis=1).sort_values(by="totalencounters_difference", ascending=False)
 
 
-  def make_donut(input_response, input_text, input_color):
+def make_donut(input_response, input_text, input_color):
   	if input_color == 'blue':
       chart_color = ['#29b5e8', '#155F7A']
   	if input_color == 'green':
