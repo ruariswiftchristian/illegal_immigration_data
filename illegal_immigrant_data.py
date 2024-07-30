@@ -56,13 +56,13 @@ def calculate_totalencounters_difference(input_df, input_year):
 
 def make_donut(input_response, input_text, input_color):
   	if input_color == 'blue':
-      chart_color = ['#29b5e8', '#155F7A']
+       chart_color = ['#29b5e8', '#155F7A']
   	if input_color == 'green':
-      chart_color = ['#27AE60', '#12783D']
+       chart_color = ['#27AE60', '#12783D']
   	if input_color == 'orange':
-      chart_color = ['#F39C12', '#875A12']
+       chart_color = ['#F39C12', '#875A12']
   	if input_color == 'red':
-      chart_color = ['#E74C3C', '#781F16']
+       chart_color = ['#E74C3C', '#781F16']
     
   	source = pd.DataFrame({
       "Topic": ['', input_text],
