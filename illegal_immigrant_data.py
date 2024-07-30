@@ -27,6 +27,8 @@ with st.sidebar:
 
     color_theme_list = ['blues', 'cividis', 'greens', 'inferno', 'magma', 'plasma', 'reds', 'rainbow', 'turbo', 'viridis']
     selected_color_theme = st.selectbox('Select a color theme', color_theme_list)
+
+    
     def make_heatmap(input_df, input_y, input_x, input_color, input_color_theme):
     		heatmap = alt.Chart(input_df).mark_rect().encode(
             y=alt.Y(f'{input_y}:O', axis=alt.Axis(title="Year", titleFontSize=18, titlePadding=15, titleFontWeight=900, labelAngle=0)),
@@ -147,14 +149,14 @@ with st.sidebar:
         st.altair_chart(donut_chart_less)
 
         with col[1]:
-    st.markdown('#### Total Encounters') 
-    heatmap = make_heatmap(df_illegals, 'year', 'month', 'totalencounters', selected_color_theme)
-    st.altair_chart(heatmap, use_container_width=True)
+            st.markdown('#### Total Encounters') 
+             heatmap = make_heatmap(df_illegals, 'year', 'month', 'totalencounters', selected_color_theme)
+            st.altair_chart(heatmap, use_container_width=True)
 
     with col[2]:
-    st.markdown('#### Top months')
+        st.markdown('#### Top months')
 
-    st.dataframe(df_selected_year_sorted,
+        st.dataframe(df_selected_year_sorted,
                  column_order=("month", "Total Encounters"),
                  hide_index=True,
                  width=None,
