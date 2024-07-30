@@ -75,7 +75,7 @@ def make_donut(input_response, input_text, input_color):
     
   	plot = alt.Chart(source).mark_arc(innerRadius=45, cornerRadius=25).encode(
       	    theta="% value",
-      	     color= alt.Color("Topic:N",
+      	    color= alt.Color("Topic:N",
                       	    scale=alt.Scale(
                                  #domain=['A', 'B'],
                                  domain=[input_text, ''],
