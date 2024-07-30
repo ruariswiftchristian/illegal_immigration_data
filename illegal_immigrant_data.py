@@ -65,12 +65,12 @@ def make_donut(input_response, input_text, input_color):
             chart_color = ['#E74C3C', '#781F16']
     
   	source = pd.DataFrame({
-       "Topic": ['', input_text],
-       "% value": [100-input_response, input_response]
+            "Topic": ['', input_text],
+            "% value": [100-input_response, input_response]
   	})
   source_bg = pd.DataFrame({
-       "Topic": ['', input_text],
-       "% value": [100, 0]
+            "Topic": ['', input_text],
+            "% value": [100, 0]
   	})
     
   	plot = alt.Chart(source).mark_arc(innerRadius=45, cornerRadius=25).encode(
